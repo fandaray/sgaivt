@@ -13,9 +13,9 @@ header {
   position: fixed;
   top: 0;
   z-index: 10;
-  display: flex; /* Use flexbox for the header */
-  justify-content: space-between; /* Distribute space between logo and about */
-  align-items: center; /* Center items vertically */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header #logo span {
@@ -26,12 +26,12 @@ header #logo span {
 }
 
 #logo {
-  width: 30%; /* Set width for logo */
+  width: 30%;
   font-size: 1.1em;
 }
 
 #about {
-  width: 67%; /* Set width for about */
+  width: 67%;
   text-align: right;
 }
 
@@ -83,8 +83,8 @@ header.fixed #logo {
   background-color: #ED760E;
   background-size: cover;
   text-align: center;
-  padding-top: 20%; 
-  position: relative; 
+  padding-top: 20%;
+  position: relative;
 }
 
 /* Responsive styles for the main content block */
@@ -131,9 +131,9 @@ header.fixed #logo {
 
 /* Block with features */
 #main {
-  display: flex; /* Use flexbox for #main */
-  flex-wrap: wrap; /* Allow elements to wrap on smaller screens */
-  justify-content: space-between; /* Distribute space evenly */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   background-color: #313131;
   border-top: 2px solid silver;
   color: #ffff;
@@ -147,7 +147,7 @@ header.fixed #logo {
 }
 
 #main div {
-  width: 48%; 
+  width: 48%;
   margin-bottom: 20px;
 }
 
@@ -160,21 +160,42 @@ header.fixed #logo {
   font-family: "Playfair";
 }
 
+#main .content {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  width: 100%; /* Take up full width */
+  gap: 20px; /* Add spacing between elements */
+}
+
+#main .intro {
+  width: 100%; /* Full width for the intro */
+}
+
+#main .text {
+  width: 100%; /* Full width for the text */
+}
+
 /* Block with statistics */
 #overview {
-  display: flex; /* Use flexbox for #overview */
-  flex-direction: column; /* Stack elements vertically */
-  align-items: center; /* Center items horizontally */
   background-image: url("Задник.png");
   background-blend-mode: multiply;
   background-color: #FFA161;
   background-size: cover;
   background-attachment: fixed;
-  padding: 10px 0;
+  padding: 20px 0;
   width: 100%;
-  text-align: center;
   color: #fff;
   border: 5px solid silver;
+  text-align: center; 
+}
+
+#overview > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
   padding: 20px;
 }
 
@@ -191,10 +212,9 @@ header.fixed #logo {
   font-family: "Oswald";
 }
 
-/* Responsive styles for the statistics block */
 #overview .img {
   width: 100%;
-  margin: 20px auto;
+  margin-top: 20px;
 }
 
 #overview img {
@@ -218,7 +238,7 @@ header.fixed #logo {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center items horizontally */
+  align-items: center;
 }
 
 h1,
@@ -248,8 +268,8 @@ h5 {
   cursor: pointer;
   font-size: 1.4em;
   font-family: "Roboto Slab", serif;
-  display: block; 
-  margin-bottom: 5px; 
+  display: block;
+  margin-bottom: 5px;
 }
 
 #form_input label > span {
