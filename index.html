@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <meta charset="UTF-8">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Якимов практика</title>
+  <link rel="stylesheet" href="css/main1.css">
+</head>
+<body>
+  <header>
+      <div id="logo" onclick="slowScroll('#top')">
+        <img src="sg.png" width="100" align="left" hspace="20">
+      </div>
+      <div id="about">
+        <a href="#" title="Деятельность" onclick="slowScroll('#main')">Деятельность</a>
+        <a href="#" onclick="slowScroll('#overview')" title="Достижения">События</a>
+        <a href="#" onclick="slowScroll('#contacts')" title="Обратная информация">Обратная информация</a>
+      </div>
+    </header>
+  <div id="top">
+    <h1 align="center">Организация номер 1 на факультете</h1>
+    <h3 align="center">Совет Губкинцев</h3>
+  </div>
+
+  <div id="main">
+    <div class="intro">
+      <h2>Деятельность Организации</h2>
+      <h3>что-то про активизм</h3>
+    </div> 
+    <div class="text">
+      <span>«Совет Губкинцев» − коллегиальный представительный орган студенческого
+        самоуправления, деятельность которого направлена на обеспечение
+        реализации прав, а также законных интересов обучающихся, проживающих
+        в Студенческом городке Российского государственного Университета нефти
+        и газа (НИУ) имени И.М. Губкина</span>
+    </div>
+  </div>
+
+  <div id="overview">
+    <h2>События</h2>
+    <div class="img">
+      <h5>Победа в дне первокурсника</h5>
+      <img src="дп.JPG" alt="дп" width="600">
+      <h5>Выезд студенческого Актива Локалкод</h5>
+      <img src="выезд.JPG" alt="локалкод" width="600">
+      <h5>ОВК СО</h5>
+      <img src="овк.JPG" alt="овк" width="600">
+    </div>
+  </div>
+
+  <div id="contacts">
+    <center><h5>Обратная связь</h5></center>
+    <form action="index.php" method="post">
+      <label for="name">Имя <span>*</span></label><br>
+      <input type="text" placeholder="Введите имя" name="name" id="name"><br>
+      <label for="email">Ваша почта <span>*</span></label><br>
+      <input type="email" placeholder="Введите email" name="email" id="email"><br>
+      <label for="message">Сообщение <span>*</span></label><br>
+      <textarea placeholder="Введите ваше сообщение" name="message" id="message"></textarea><br>
+      <button type="submit" id="mess_send" class="btn">Отправить</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>Спасибо, что посетили наш сайт, хорошего дня!</p>
+    <p>Ждём вас в составе СГ АиВТ!</p>
+    <a href="https://vk.com/aivt_gubkin">Группа факультета в вк</a>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    function slowScroll(id) {
+      $('html, body').animate({
+        scrollTop: $(id).offset().top
+      }, 500);
+    }
+
+    $(document).on("scroll", function () {
+      if($(window).scrollTop() === 0)
+        $("header").removeClass("fixed");
+      else
+        $("header").attr("class", "fixed");
+    });
+
+  </script>
+  <script>
+    if ('serviceWorker' in navigator){
+      navigator.serviceWorker.register('sw.js', {scope: '/'});
+    }
+  </script>
+</body>
+</html>
